@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>niks-portfolio | DevOps Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    header {
+      background: #020617;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: #38bdf8;
+      margin: 0;
+    }
+    nav a {
+      color: #e5e7eb;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    section {
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #cbd5f5;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #020617;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>niks-portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#learning">Learning</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I'm Nikhil 👋</h2>
+    <p>DevOps / Site Reliability Engineer | AWS | Terraform | Kubernetes</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a DevOps / SRE professional with hands-on experience in cloud infrastructure,
+      automation, monitoring, and CI/CD pipelines. I focus on building scalable,
+      reliable, and cost-effective systems using modern DevOps practices.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Core DevOps Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Cloud</h3>
+        <p>AWS (EC2, VPC, IAM, RDS, S3, Lambda, CloudWatch, Route53)</p>
+      </div>
+      <div class="card">
+        <h3>CI/CD</h3>
+        <p>Jenkins, GitHub Actions, GitLab CI, Shell scripting</p>
+      </div>
+      <div class="card">
+        <h3>Infrastructure as Code</h3>
+        <p>Terraform (modules, remote state, workspaces)</p>
+      </div>
+      <div class="card">
+        <h3>Containers</h3>
+        <p>Docker, Docker Compose, Kubernetes (EKS)</p>
+      </div>
+      <div class="card">
+        <h3>Monitoring & Observability</h3>
+        <p>Prometheus, Grafana, Telegraf, Signoz</p>
+      </div>
+      <div class="card">
+        <h3>Databases & OS</h3>
+        <p>MySQL, Linux (Ubuntu, RHEL, SUSE)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning">
+    <h2>Currently Learning</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Kubernetes Advanced</h3>
+        <p>Helm, Ingress Controllers, Autoscaling, RBAC</p>
+      </div>
+      <div class="card">
+        <h3>SRE Practices</h3>
+        <p>SLI, SLO, Error Budgets, Incident Management</p>
+      </div>
+      <div class="card">
+        <h3>Security</h3>
+        <p>DevSecOps, IAM best practices, container security</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Optimization</h3>
+        <p>Cost optimization, performance tuning, reliability patterns</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: nikhil@example.com</p>
+    <p>GitHub: github.com/niks</p>
+    <p>LinkedIn: linkedin.com/in/nikhiljain</p>
+  </section>
+
+  <footer>
+    <p>© 2025 niks-portfolio | Built with ❤️ for DevOps</p>
+  </footer>
+
+</body>
+</html>

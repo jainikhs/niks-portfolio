@@ -9,20 +9,20 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    # - name: Checkout
+    #   uses: actions/checkout@v4
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-south-1
-    - name: Verify AWS identity
-      run: aws sts get-caller-identity
+    # - name: Configure AWS Credentials
+    #   uses: aws-actions/configure-aws-credentials@v4
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: ap-south-1
+    # - name: Verify AWS identity
+    #   run: aws sts get-caller-identity
 
-    - name: Deploy static site to S3 bucket
-      run: aws s3 sync . s3://niks-portfolios --delete
+    # - name: Deploy static site to S3 bucket
+    #   run: aws s3 sync . s3://niks-portfolios --delete
 
     - name: Print "Hello World !"
       run: echo "Hello World !"
@@ -36,8 +36,9 @@ jobs:
     - name: print PR Number on pull
       if: ${{ github.event_name == 'pull_request' }}
       env:
-        PR_Number: ${{ github.event.pull_request.Number }}
-      run: echo "the pull PR Number $PR_Number"
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+      run: echo "The PR Number is $PR_NUMBER"
+
 
     - name: print the current repository
       run: |

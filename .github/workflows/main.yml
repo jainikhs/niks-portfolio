@@ -34,7 +34,7 @@ jobs:
       run: echo "The event type ${{ github.event.type }}"
     
     - name: print PR Number on pull
-      if: ${{ github.event_name == "pull_request" }}
+      if: ${{ github.event_name == 'pull_request' }}
       env:
         PR_Number: ${{ github.event.pull_request.Number }}
       run: echo "the pull PR Number $PR_Number"

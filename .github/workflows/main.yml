@@ -12,7 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: list repository files that present in the repository
+    - name: list repository files that present in the repositories
       run: |
         echo "Listing file that present in the repository"
         ls -R ${{ github.workspace }} 

@@ -9,8 +9,13 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # - name: Checkout
-    #   uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: list repository files
+      run: |
+        echo "Listing file that present in the repository"
+        ls -R ${{ github.workspace }} 
 
     # - name: Configure AWS Credentials
     #   uses: aws-actions/configure-aws-credentials@v4
@@ -33,11 +38,11 @@ jobs:
     - name: print event type
       run: echo "The event type ${{ github.event.type }}"
     
-    - name: print PR Number on pull
-      if: ${{ github.event_name == 'pull_request' }}
-      env:
-        PR_NUMBER: ${{ github.event.pull_request.number }}
-      run: echo "The PR Number is $PR_NUMBER"
+    # - name: print PR Number on pull
+    #   if: ${{ github.event_name == 'pull_request' }}
+    #   env:
+    #     PR_NUMBER: ${{ github.event.pull_request.number }}
+    #   run: echo "The PR Number is $PR_NUMBER"
 
 
     - name: print the current repository

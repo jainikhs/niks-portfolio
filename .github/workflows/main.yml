@@ -28,7 +28,7 @@ jobs:
       run: echo "Hello World !"
 
     - name: print the current date
-      run: echo "Current Date: $(date)"
+      run: echo "Current Date $(date +'%Y-%m-%dT%H:%M:%S')"
 
     - name: print the current repository
       run: |

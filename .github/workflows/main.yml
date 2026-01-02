@@ -23,3 +23,12 @@ jobs:
 
     - name: Deploy static site to S3 bucket
       run: aws s3 sync . s3://niks-portfolios --delete
+
+    - name: Print "Hello World !"
+      run: echo "Hello World !"
+
+    - name: print the current date
+      run: echo "Current Date: $(date)"
+
+    - name: print the current repository
+      run: echo "current repository: $({github.repository})"

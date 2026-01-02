@@ -1,0 +1,9 @@
+{
+"dependencies": {
+  "express": "^4.x"
+},
+"devDependencies": {
+  "mocha": "^10.x",
+  "supertest": "^6.x"
+}
+}

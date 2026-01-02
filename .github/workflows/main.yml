@@ -26,8 +26,7 @@ jobs:
     - name: install dependencies
       run: |
         npm install
-        npm ci
-
+        
     - name: Run tests
       run : npm test
 

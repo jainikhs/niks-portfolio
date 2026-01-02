@@ -34,7 +34,7 @@ jobs:
       run: |
         node index.js &
         sleep 5
-        curl -f http://localhost:7000
+        curl -f http://localhost:7000 -v
     # - name: Configure AWS Credentials
     #   uses: aws-actions/configure-aws-credentials@v4
     #   with:

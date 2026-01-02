@@ -35,26 +35,36 @@ jobs:
         node index.js &
         sleep 5
         curl -f http://localhost:7000 -v
-    # - name: Configure AWS Credentials
-    #   uses: aws-actions/configure-aws-credentials@v4
-    #   with:
-    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: ap-south-1
-    # - name: Verify AWS identity
-    #   run: aws sts get-caller-identity
 
-    # - name: Deploy static site to S3 bucket
-    #   run: aws s3 sync . s3://niks-portfolios --delete
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-south-1
 
-    - name: Print "Hello World !"
-      run: echo "Hello World !"
+    - name: Print secret length
+      run: |
+        echo "length of the AWS AWS_ACCESS_KEY_ID ${#AWS_ACCESS_KEY_ID}"
+        echo "length of the AWS_SECRET_ACCESS_KEY ${#AWS_SECRET_ACCESS_KEY}"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-    - name: print the current date
-      run: echo "Current Date $(date +'%Y-%m-%dT%H:%M:%S')"
+    - name: Verify AWS identity
+      run: aws sts get-caller-identity
 
-    - name: print event type
-      run: echo "The event type ${{ github.event.type }}"
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync . s3://niks-portfolios --delete
+
+    # - name: Print "Hello World !"
+    #   run: echo "Hello World !"
+
+    # - name: print the current date
+    #   run: echo "Current Date $(date +'%Y-%m-%dT%H:%M:%S')"
+
+    # - name: print event type
+    #   run: echo "The event type ${{ github.event.type }}"
     
     # - name: print PR Number on pull
     #   if: ${{ github.event_name == 'pull_request' }}

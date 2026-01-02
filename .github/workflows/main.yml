@@ -31,4 +31,7 @@ jobs:
       run: echo "Current Date: $(date)"
 
     - name: print the current repository
-      run: echo "current repository: $({github.repository})"
+      run: |
+        echo "Repo: ${{ github.repository }}"
+        echo "Branch: ${{ github.ref_name }}"
+        echo "Actor: ${{ github.actor }}"
